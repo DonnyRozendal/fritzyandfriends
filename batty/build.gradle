@@ -1,25 +1,6 @@
-plugins {
-	id 'org.springframework.boot' version '2.2.6.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-	id 'java'
-}
-
-group = 'nl.hva.fritzyandfriends'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-repositories {
-	mavenCentral()
-}
+group 'nl.hva.fritzyandfriends'
+version '1.0-SNAPSHOT'
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-	testImplementation 'io.projectreactor:reactor-test'
-}
-
-test {
-	useJUnitPlatform()
+    implementation project(':common')
 }
