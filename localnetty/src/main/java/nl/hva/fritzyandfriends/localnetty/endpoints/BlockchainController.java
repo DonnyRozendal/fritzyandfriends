@@ -16,6 +16,7 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;
 import org.web3j.protocol.core.methods.response.*;
 import org.web3j.protocol.http.HttpService;
+import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.utils.Convert;
 
 import static nl.hva.fritzyandfriends.common.TransactionType.BUY;
@@ -30,7 +31,7 @@ public class BlockchainController {
     private Fritzy fritzyContract;
     private String contractAddress = "0x87144ad7096a8726e8b78b1065346c988205f604";
 
-    org.web3j.tx.gas.ContractGasProvider contractGasProvider = new FritzyGasProvider();
+    ContractGasProvider contractGasProvider = new FritzyGasProvider();
 
     public BlockchainController() throws Exception {
 //        deployContract();

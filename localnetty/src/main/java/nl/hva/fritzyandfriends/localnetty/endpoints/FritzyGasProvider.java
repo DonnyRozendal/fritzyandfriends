@@ -1,8 +1,10 @@
 package nl.hva.fritzyandfriends.localnetty.endpoints;
 
+import org.web3j.tx.gas.ContractGasProvider;
+
 import java.math.BigInteger;
 
-public class FritzyGasProvider implements org.web3j.tx.gas.ContractGasProvider {
+public class FritzyGasProvider implements ContractGasProvider {
     @Override
     public BigInteger getGasPrice(String contractFunc) {
         return BigInteger.valueOf(20000000000L);
