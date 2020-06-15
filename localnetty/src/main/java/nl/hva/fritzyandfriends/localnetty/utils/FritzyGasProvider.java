@@ -1,4 +1,4 @@
-package nl.hva.fritzyandfriends.localnetty.endpoints;
+package nl.hva.fritzyandfriends.localnetty.utils;
 
 import org.web3j.tx.gas.ContractGasProvider;
 
