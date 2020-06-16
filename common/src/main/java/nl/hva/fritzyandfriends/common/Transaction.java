@@ -1,14 +1,16 @@
 package nl.hva.fritzyandfriends.common;
 
+import java.math.BigInteger;
+
 public class Transaction {
 
     private TransactionType transactionType;
-    private int kwh;
+    private BigInteger kwh;
 
     public Transaction() {
     }
 
-    public Transaction(TransactionType transactionType, int kwh) {
+    public Transaction(TransactionType transactionType, BigInteger kwh) {
         this.transactionType = transactionType;
         this.kwh = kwh;
     }
@@ -17,7 +19,7 @@ public class Transaction {
         return transactionType;
     }
 
-    public int getKwh() {
+    public BigInteger getKwh() {
         return kwh;
     }
 }

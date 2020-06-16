@@ -6,4 +6,8 @@ dependencies {
 
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springframework_version"
     implementation 'mysql:mysql-connector-java:8.0.20'
+
+    implementation 'org.web3j:core:4.5.11'
 }
+
+
