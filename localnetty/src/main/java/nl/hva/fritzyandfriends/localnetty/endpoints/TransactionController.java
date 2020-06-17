@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/transaction")
-public class TransactionResource {
+public class TransactionController {
 
     @PostMapping("/")
     Mono<Confirmation> postTransaction() {
