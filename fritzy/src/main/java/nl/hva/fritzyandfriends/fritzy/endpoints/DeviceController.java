@@ -11,16 +11,16 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/register")
-public class RegisterResource {
+@RequestMapping("/device")
+public class DeviceController {
 
     private final Environment environment;
 
-    public RegisterResource(Environment environment) {
+    public DeviceController(Environment environment) {
         this.environment = environment;
     }
 
-    @GetMapping
+    @GetMapping("/register")
     Mono<Device> register() {
         Device device = new Device(136, "fritzy", environment.getProperty("server.port"), DeviceType.CONSUMER);
 
