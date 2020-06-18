@@ -5,6 +5,7 @@ allprojects {
     apply plugin: 'java'
     repositories {
         mavenCentral()
+        gradlePluginPortal()
     }
     ext {
         springframework_version = '2.3.0.RELEASE'

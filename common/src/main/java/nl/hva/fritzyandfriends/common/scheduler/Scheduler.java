@@ -15,8 +15,7 @@ public class Scheduler {
         scheduler.schedule(() -> {
             scheduledFuture.cancel(true);
             scheduler.shutdown();
-        }, 1, TimeUnit.MINUTES);
-
+        }, 120, TimeUnit.SECONDS);
     }
 
 }
