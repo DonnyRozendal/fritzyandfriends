@@ -4,6 +4,7 @@ import contracts.generated.Fritzy;
 
 import nl.hva.fritzyandfriends.common.Confirmation;
 import nl.hva.fritzyandfriends.common.Transaction;
+import nl.hva.fritzyandfriends.common.TransactionConfirmation;
 import nl.hva.fritzyandfriends.localnetty.utils.FritzyGasProvider;
 import org.springframework.web.bind.annotation.*;
 
@@ -63,12 +64,16 @@ public class BlockchainController {
     }
 
     @PostMapping("/makeTransaction")
-    Mono<Confirmation> transaction(@RequestParam boolean isSelling, @RequestParam BigInteger power) throws Exception {
+    public Mono<TransactionConfirmation> makeTransaction(@RequestParam boolean isSelling, @RequestParam BigInteger power) throws Exception {
         TransactionReceipt transaction2 = fritzyContract.makeTransaction(isSelling, power).send();
         String trans2Hash = transaction2.getTransactionHash();
         System.out.println("Transaction made " + trans2Hash);
-        return Mono.just(new Confirmation("Transaction made."));
 
+        if (isSelling) {
+            return Mono.just(new TransactionConfirmation(SELL, power, "Transaction successfully made"));
+        } else {
+            return Mono.just(new TransactionConfirmation(BUY, power, "Transaction successfully made"));
+        }
     }
 
     @GetMapping("/getAllTransactions")
