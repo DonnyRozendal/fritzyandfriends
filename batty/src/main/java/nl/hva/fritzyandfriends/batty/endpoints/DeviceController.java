@@ -22,7 +22,7 @@ public class DeviceController {
 
     @GetMapping("/register")
     Mono<Device> Register() {
-        Device device = new Device(137, "batty", environment.getProperty("server.port"), DeviceType.STORAGE);
+        Device device = new Device("Batty", environment.getProperty("server.port"), DeviceType.STORAGE);
         return WebClient.create("http://localhost:8081")
                 .post()
                 .uri("/device/register")
