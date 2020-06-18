@@ -19,7 +19,6 @@ public class DeviceController {
         this.environment = environment;
     }
 
-
     @GetMapping("/register")
     Mono<Device> Register() {
         Device device = new Device(138, "sunny", environment.getProperty("server.port"), DeviceType.PRODUCER);
