@@ -73,14 +73,18 @@ public class PowerController {
         }
 
         int netPower = (producedPower + storedPower) - consumedPower;
+        System.out.println("Netpower = Sunny:" + producedPower + " + Batty:" + storedPower + " - Fritzy:" + consumedPower + " = " + netPower);
         boolean isSelling;
 
         if (netPower > 0) {
             isSelling = true;
+            System.out.println("Netpower > 0 so SELL Transaction is going to be made with kwh value of " + netPower);
         } else if (netPower < 0) {
             isSelling = false;
             netPower = Math.abs(netPower);
+            System.out.println("Netpower < 0 so BUY Transaction is going to be made with kwh value of " + netPower);
         } else {
+            System.out.println("Netpower = 0 so NO Transaction is going to be made");
             return Mono.just(new TransactionConfirmation("Transaction not needed because netPower equals 0"));
         }
 

@@ -51,8 +51,8 @@ public class BlockchainController {
     @GetMapping("/load")
     Mono<Confirmation> loadContract() throws Exception {
         fritzyContract = Fritzy.load(contractAddress, web3, creds, contractGasProvider);
-        System.out.println(contractAddress);
-        System.out.println("isContractValid=" + fritzyContract.isValid());
+//        System.out.println(contractAddress);
+//        System.out.println("isContractValid=" + fritzyContract.isValid());
         return Mono.just(new Confirmation("Contract loaded."));
     }
 
