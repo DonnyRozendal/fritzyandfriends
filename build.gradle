@@ -1,0 +1,19 @@
+group 'nl.hva'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    ext {
+        springframework_version = '2.3.0.RELEASE'
+    }
+}
+
+subprojects {
+    dependencies {
+        implementation "org.springframework.boot:spring-boot-starter-webflux:$springframework_version"
+    }
+}
