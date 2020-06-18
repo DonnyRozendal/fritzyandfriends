@@ -9,6 +9,11 @@ This project consists of 4 actors (or 4 submodules):
 ## Setup
 TODO
 
+Solidity Compiler - correct version v5.....
+Gradle version - compatability with the solc-web3j plugin
+
+
+
 ### LocalNetty
 This is the central point of the application. It contains the following features:
 - Register other devices
