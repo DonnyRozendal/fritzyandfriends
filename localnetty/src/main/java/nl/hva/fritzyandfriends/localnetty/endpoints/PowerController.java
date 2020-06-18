@@ -79,6 +79,7 @@ public class PowerController {
             isSelling = true;
         } else if (netPower < 0) {
             isSelling = false;
+            netPower = Math.abs(netPower);
         } else {
             return Mono.just(new TransactionConfirmation("Transaction not needed because netPower equals 0"));
         }
