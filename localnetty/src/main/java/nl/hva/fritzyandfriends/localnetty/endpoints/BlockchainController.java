@@ -33,7 +33,7 @@ public class BlockchainController {
     private Credentials creds = Credentials.create("88D12DA1B252CC7B2AA2E4584504F0CEAC608373F0B00E00BF6A751446DA1ACE");
 
     private Fritzy fritzyContract;
-    private String contractAddress = "0x87144ad7096a8726e8b78b1065346c988205f604";
+    private String contractAddress = "0xcf0f7c8906b774c5775889273a4c543f374f8a53";
 
     ContractGasProvider contractGasProvider = new FritzyGasProvider();
 
