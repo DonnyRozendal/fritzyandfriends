@@ -74,20 +74,7 @@ public class LoopSimulator {
 
         scheduler.scheduleAtFixedRate(() -> {
             System.out.println("Executing transaction...");
-
-            int netAmount = fritzyAmount - battyAmount - sunnyAmount;
-
-            TransactionType type;
-            if (netAmount > 0) {
-                type = TransactionType.BUY;
-            } else if (netAmount < 0) {
-                type = TransactionType.SELL;
-            } else {
-                return;
-            }
-            System.out.println(fritzyAmount + " - " + battyAmount + " - " + sunnyAmount + " = " + netAmount);
-            System.out.println(type + " " + Math.abs(netAmount));
-
+            
             try {
                 TransactionConfirmation result = getApi("http://localhost:8081").executeTransaction().execute().body();
                 if (result != null) {
