@@ -18,6 +18,8 @@ import java.util.concurrent.TimeUnit;
  * In each loop, the /relayData endpoint of the respective actor is called. This endpoint sends information to
  * LocalNetty's inbox. This information is eventually used by the transaction loop. This is where LocalNetty takes
  * the most recent information from its inbox and determines if it should buy or sell electricity.
+ *
+ * You can run the main function of this class when all actors are started.
  */
 public class LoopSimulator {
 
