@@ -1,7 +1,6 @@
 package nl.hva.fritzyandfriends.common.scheduler;
 
 import nl.hva.fritzyandfriends.common.TransactionConfirmation;
-import nl.hva.fritzyandfriends.common.TransactionType;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -12,6 +11,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This class functions as a demo for looping certain behavior of Fritzy, Batty and Sunny. You can use the Scheduler
+ * class to change the behavior of the loops.
+ *
+ * In each loop, the /relayData endpoint of the respective actor is called. This endpoint sends information to
+ * LocalNetty's inbox. This information is eventually used by the transaction loop. This is where LocalNetty takes
+ * the most recent information from its inbox and determines if it should buy or sell electricity.
+ */
 public class LoopSimulator {
 
     private static int fritzyCounter = 0;
@@ -27,7 +34,7 @@ public class LoopSimulator {
         loopBatty();
         loopSunny();
 
-        executeTransaction();
+        loopTransaction();
     }
 
     private static void loopFritzy() {
@@ -69,7 +76,7 @@ public class LoopSimulator {
         });
     }
 
-    private static void executeTransaction() {
+    private static void loopTransaction() {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         scheduler.scheduleAtFixedRate(() -> {
