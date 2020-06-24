@@ -38,11 +38,42 @@ The database is created with `mydb?createDatabaseIfNotExist=true` from `applicat
 The tables are created from the `Entity` data classes from the common module.
 
 ### Solidity Compiler
-TODO
 
-correct version v5.....
-Gradle version - compatability with the solc-web3j plugin
+The solidity compiler is needed to create a java wrapper of our Fritzy smart contract for the BlockchainController to interact with.
 
+1. Download the compiler at https://github.com/ethereum/solidity/releases/tag/v0.5.15
+
+For windows download: solidity-windows.zip
+For linux download: solc-static-linux
+
+2. Unzip the file somewhere and add the FOLDER to your path.
+
+How to add to System Path for Windows 
+https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+
+3. If everything is done correctly if you go to your cmd and type in solc you should get a list of all the allowed options
+
+
+### Web3j-gradle-plugin
+
+The way the project is currently setup we are using web3j-gradle-plugin which automatically uses the solidity compiler on your computer at gradle:build phase to generate the contracts that are stored in common/solidity. The java wrappers that are generated through the solc are then stored in build/contracts. 
+
+<b> Major points to take note of !! </b>
+
+The web3j-solc plugin is not compatible with gradle version 6.0 and up
+https://github.com/web3j/web3j-gradle-plugin/issues/31
+
+Pragma version <= 5.1.15 because smart contracts of pragma version >= 0.6.x don't get generated correctly because of the plugin.
+https://github.com/web3j/web3j-gradle-plugin/issues/34
+
+These are frustrating issues to deal with however the upside is that any changes to the smart contract don't require using the solc compiler manually since the plugin deals with this during gradle:build. Keep an eye out on these issues because updates may come that fix this issue making the use of gradle 6.0 > and pragma version 0.6.x > possible with the plugin. 
+
+Ofcourse the plugin could be cut out making it possible to use gradle 6.0 > and 0.6.x > however i would only think this would be worth it if ABIEncoderV2 was not an experimental pragma feature anymore since any time the smart contract is changed you would need to manually recompile.
+
+This can be quite a chore if you are experimenting with the contract while testing some things out with the Blockchain Controller.
+
+
+Improvements for the smart contract: ABIEncoderV2 can be implemented once this is not an experimental feature anymore.
 
 
 ### LocalNetty
