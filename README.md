@@ -63,18 +63,16 @@ The way the project is currently setup we are using web3j-gradle-plugin which au
 The web3j-solc plugin is not compatible with gradle version 6.0 and up
 https://github.com/web3j/web3j-gradle-plugin/issues/31
 
-Pragma version <= 5.1.15 because smart contracts of pragma version >= 0.6.x don't get generated correctly because of the plugin.
+The web3j-solc-plugin also forces us to use Pragma version <= 5.1.15 because smart contracts of pragma version >= 0.6.x don't get generated correctly with the plugin.
 https://github.com/web3j/web3j-gradle-plugin/issues/34
 
-These are frustrating issues to deal with however the upside is that any changes to the smart contract don't require using the solc compiler manually since the plugin deals with this during gradle:build. Keep an eye out on these issues because updates may come that fix this issue making the use of gradle 6.0 > and pragma version 0.6.x > possible with the plugin. 
+These are frustrating issues to deal with however the upside is that any changes to the smart contract don't require using the solc compiler manually since the plugin deals with this during gradle:build. Keep an eye out on these github issues because updates may come that fix this issue making the use of gradle 6.0 > and pragma version 0.6.x > possible with the plugin. 
 
-Ofcourse the plugin could be cut out making it possible to use gradle 6.0 > and 0.6.x > however i would only think this would be worth it if ABIEncoderV2 was not an experimental pragma feature anymore since any time the smart contract is changed you would need to manually recompile.
+Ofcourse the plugin could be cut out making it possible to use gradle 6.0 > and 0.6.x > however i would only think this would be worth it if ABIEncoderV2 was not an experimental pragma feature anymore since otherwise any time the smart contract is changed you would need to manually recompile.
 
 This can be quite a chore if you are experimenting with the contract while testing some things out with the Blockchain Controller.
 
-
 Improvements for the smart contract: ABIEncoderV2 can be implemented once this is not an experimental feature anymore.
-
 
 ### LocalNetty
 This is the central point of the application. It contains the following features:
