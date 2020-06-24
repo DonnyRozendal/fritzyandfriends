@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "4603fe53-72d1-47a1-8464-899fd59f02ba",
+		"name": "Fritzy & Friends API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localnetty",
+			"item": [
+				{
+					"name": "BlockchainController",
+					"item": [
+						{
+							"name": "Set wallet credentials",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/setCredentials?walletPkey",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"setCredentials"
+									],
+									"query": [
+										{
+											"key": "walletPkey",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Load contract",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/load",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"load"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deploy contract",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/deploy",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"deploy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Ethereum node info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/info",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/getAllTransactions",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"getAllTransactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get wallet balance",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/balance",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"balance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make transaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/makeTransaction?isSelling=true&power=50",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"makeTransaction"
+									],
+									"query": [
+										{
+											"key": "isSelling",
+											"value": "true"
+										},
+										{
+											"key": "power",
+											"value": "50"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "PowerController",
+					"item": [
+						{
+							"name": "Get all InboxData",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/power/getAllInboxData",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"power",
+										"getAllInboxData"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calculate transaction",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/power/calculateTransaction",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"power",
+										"calculateTransaction"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "DeviceController",
+					"item": [
+						{
+							"name": "Get all registered devices",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/device/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"device",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "fritzy",
+			"item": [
+				{
+					"name": "DeviceController",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/device/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"device",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Relay data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/fritzy/relayData?kwh=410",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"fritzy",
+								"relayData"
+							],
+							"query": [
+								{
+									"key": "kwh",
+									"value": "410"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "batty",
+			"item": [
+				{
+					"name": "DeviceController",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8083/device/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"device",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Relay data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/batty/relayData?kwh=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"batty",
+								"relayData"
+							],
+							"query": [
+								{
+									"key": "kwh",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "sunny",
+			"item": [
+				{
+					"name": "DeviceController",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8084/device/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"device",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Relay data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/sunny/relayData?kwh=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"sunny",
+								"relayData"
+							],
+							"query": [
+								{
+									"key": "kwh",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

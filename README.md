@@ -9,9 +9,12 @@ This project consists of 4 actors (or 4 submodules):
 TODO: Further introduction...
 
 ### Project Setup
-1. Clone the project
-2. Open it in an IDE like IntelliJ IDEA
-3. IntelliJ IDEA should prompt you to configure the Spring Boot Applications as runnable Services, which you can then run from the Services tab. If not, then the actors can be started from their respective Application classes. You can run each actor independent from each other, but keep in mind that LocalNetty tries to connect to a MySQL database when it is started. In order to configure the database, see the steps below.
+1. Clone the project.
+2. Open it in an IDE like IntelliJ IDEA.
+3. Set up the database for LocalNetty (see database setup).
+4. Set up the Solidity compiler for LocalNetty (see Solidity compiler setup).
+5. Run each actor from the Services tab or its Application class.
+6. Use the LoopSimulator in the common module to simulate system behavior, or use the Postman collection from the postman folder.
 
 ### Database Setup
 1. Install Docker
@@ -24,7 +27,7 @@ docker run -e MYSQL_ROOT_PASSWORD=fritzyandfriends --name ffdb -d -p 3307:3306 m
 - Database name is set to `ffdb`
 - External port is set to `3307`, and the internal port to `3306`.
 
-This information is then used by LocalNetty from its `application.properties` file. Here you can also configure the port of the database.
+This information is set in `application.properties` of `LocalNetty`.
 
 To access the MySQL shell of the container from a terminal for testing, run the following command:
 ```
