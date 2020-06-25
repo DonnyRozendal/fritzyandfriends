@@ -76,6 +76,7 @@ Improvements for the smart contract: ABIEncoderV2 can be implemented once this i
 
 ### LocalNetty
 See https://github.com/Terazeus/fritzyandfriends/wiki#localnetty
+
 This is the central point of the application. It contains the following features:
 - Register other devices
 - Receiving power data from the other actors
@@ -84,7 +85,8 @@ This is the central point of the application. It contains the following features
 - Execute a transaction to the smart contract
 
 ### Fritzy, Batty, Sunny
-https://github.com/Terazeus/fritzyandfriends/wiki#batty-sunny-and-netty
+See https://github.com/Terazeus/fritzyandfriends/wiki#batty-sunny-and-netty
+
 These are the actors that revolve around Local Netty. They contain the following features:
 - Register itself
 - Relay power data to Local Netty
