@@ -46,11 +46,12 @@ public class PowerController {
 
     /**
      * This method calculates the transaction that has to be made based on the latest InboxData sent from the three actors.
+     * 
      * <p>
      * The latest InboxData from each actor is put together in an array which is cycled through and based on if the
      * InboxData is from a consuming/producing or storage device their communicated kwh value is added to their respective ...Power Integer.
-     * <p>
      * The netpower is then calculated and the corresponding transaction is then made(BUY/SELL or Nothing if netPower =0)
+     * <p>
      *
      * @return the TransactionConfirmation if the transaction passed or failed.
      */
