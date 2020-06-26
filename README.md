@@ -11,6 +11,15 @@ the [wiki](https://github.com/Terazeus/fritzyandfriends/wiki).
 5. Run each actor from the Services tab or its Application class.
 6. Use the LoopSimulator in the common module to simulate system behavior, or use the Postman collection from the postman folder.
 
+How to add another module (actor) if needed:
+1. Right click on the parent module `fritzyandfriends` > New > Module.
+2. Select `Gradle` on the left column.
+3. Select `Java` as a library.
+4. Give the module a name and click finish.
+5. Add `implementation project(':common')` to its `build.gradle`.
+6. Make a `resources` package with an `application.properties` file to specify the port of the actor.
+7. Generate a main class and add the `@SpringBootApplication` annotation to it.
+
 ### Database Setup
 1. Install Docker
 2. Create a MySQL container:
